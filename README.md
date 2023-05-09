@@ -5,6 +5,19 @@
 
 ## Documentación
 
+Arrancar en development mode:
+
+```
+npm run initDB
+```
+
+Arrancar en cluster mode:
+
+```
+npm run cluster
+```
+
+
 Localizarnos en la carpeta 
 
 ```
