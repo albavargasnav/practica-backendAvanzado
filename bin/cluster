@@ -7,11 +7,12 @@
 var app = require('../app');
 var debug = require('debug')('nodepop:server');
 var http = require('http');
-const cluster = require('cluster');
+//DESCOMENTAR PARA AÑADIR CLUSTER
+//const cluster = require('cluster');
 
-if (cluster.isMaster) {
-  console.log('Arrancando el master');
-}
+//if (cluster.isMaster) {
+  //console.log('Arrancando el master');
+//}
 
 /**
  * Get port from environment and store in Express.
