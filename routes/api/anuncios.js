@@ -7,6 +7,9 @@ const Anuncio = require('../../models/Anuncio');
 router.get('/', async (req, res, next) => {
   try {
 
+    //Cambiar en el texto de cada idioma desde controlador
+    res.locals.texto = res.__('Text');
+
     //Lista de tags 
     res.locals.tags = [
       { name: ['Work','Lifestyle', 'Motor','Mobile']}
