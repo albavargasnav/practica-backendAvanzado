@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    
+    <h2>Lista de anuncios</h2>
+    <% anuncios.forEach(anuncio => { %>
+      <img class="image" src="../images/<%=anuncio.foto%>" width="20%"/>
+      <p>Nombre: <%= anuncio.nombre %> </p>
+      <p>Venta: <%= anuncio.venta %></p>
+      <p>Precio: <%= anuncio.precio %></p>
+      <p>Tags: <%= anuncio.tags %></p>
+    <% }) %>
+
+  </body>
+</html>

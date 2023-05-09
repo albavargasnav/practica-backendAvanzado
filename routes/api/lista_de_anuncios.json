@@ -1,0 +1,46 @@
+[
+    {
+        "nombre": "Samsung A40",
+        "venta": true,
+        "precio": 140,
+        "foto": "samsung_a40.jpg",
+        "tags": [
+            "lifestyle",
+            "mobile"
+        ],
+        "__v": 0
+    },
+    {
+        "nombre": "Mercedes",
+        "venta": true,
+        "precio": 4600,
+        "foto": "mercedes.jpg",
+        "tags": [
+            "lifestyle",
+            "motor"
+        ],
+        "__v": 0
+    },
+    {
+        "nombre": "Bicicleta",
+        "venta": false,
+        "precio": 100,
+        "foto": "bicicleta.jpg",
+        "tags": [
+            "lifestyle",
+            "work"
+        ],
+        "__v": 0
+    },
+    {
+        "nombre": "Llantas",
+        "venta": false,
+        "precio": 50,
+        "foto": "llantas.jpg",
+        "tags": [
+            "lifestyle",
+            "motor"
+        ],
+        "__v": 0
+    }
+]
