@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const i18n = require('./lib/i18nConfigure');
 
 require('./lib/connectMongoose');
 
@@ -14,6 +15,7 @@ app.set('view engine', 'ejs');
 
 app.locals.title = 'nodepop';
 
+app.use(i18n.init);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

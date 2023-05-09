@@ -5,8 +5,13 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    
+
+    <% include cabecera.ejs %>
+
+  
     <h2>Lista de anuncios</h2>
+    
+    <p><%= __('Welcome to') %> <%= title %></p>
     <% anuncios.forEach(anuncio => { %>
       <img class="image" src="../images/<%=anuncio.foto%>" width="20%"/>
       <p>Nombre: <%= anuncio.nombre %> </p>
