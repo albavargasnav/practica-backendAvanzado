@@ -15,7 +15,6 @@ app.set('view engine', 'ejs');
 
 app.locals.title = 'nodepop';
 
-app.use(i18n.init);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -27,6 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 app.use('/api/anuncios', require('./routes/api/anuncios'));
 
+app.use(i18n.init);
+
 /**
  * Rutas del Website
  */
@@ -36,6 +37,7 @@ var usersRouter = require('./routes/users');
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/features', require('./routes/features'));
+app.use('/change-locale', require('./routes/change-locale'));
 
 
 // catch 404 and forward to error handler
