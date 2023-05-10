@@ -23,7 +23,10 @@ class LoginController {
             return;
         }
 
-        // si existe y la contraseña coincide --> redirigir a la zona privada
+        // si existe y la contraseña coincide
+        // apuntar en la sesión del usuario, que está autenticado
+        req.session.usuarioLogado = usuario._id;
+        //--> redirigir a la zona privada
         res.redirect('/privado');
         } catch(err) {
             next(err);

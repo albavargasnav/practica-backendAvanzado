@@ -6,6 +6,7 @@ var logger = require('morgan');
 const i18n = require('./lib/i18nConfigure');
 const LoginController = require('./controllers/LoginController');
 const PrivadoController = require('./controllers/PrivadoController');
+const session = require('express-session');
 
 require('./lib/connectMongoose');
 
@@ -29,6 +30,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/anuncios', require('./routes/api/anuncios'));
 
 app.use(i18n.init);
+app.use(session({
+  name: 'nodepop-session',
+  secret: 'idjieogriorgi344r',
+  saveUninitialized: true,
+  resave: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 *24 * 2 // expira a los 2 dias de inactividad
+  }
+}))
 
 const loginController = new LoginController();
 const privadoController = new PrivadoController();
