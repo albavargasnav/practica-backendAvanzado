@@ -1,24 +1,38 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<% include cabecera.ejs %>
 
-    <% include cabecera.ejs %>
+
+  <h2>Lista de anuncios</h2>
+
+  <!-- Mashead header-->
+  <header class="masthead">
+    <div class="container px-5">
+      <div class="row gx-5 align-items-center">
+        <div class="col-lg-6">
+          <!-- Mashead text and app badges-->
+          <div class="mb-5 mb-lg-0 text-center text-lg-start">
+            <h1 class="display-1 lh-1 mb-3"><%= __('Welcome to') %><%= title %></h1>
+
+    
 
   
-    <h2>Lista de anuncios</h2>
-    
-    <p><%= __('Welcome to') %> <%= title %></p>
-    <% anuncios.forEach(anuncio => { %>
-      <img class="image" src="../images/<%=anuncio.foto%>" width="20%"/>
-      <p>Nombre: <%= anuncio.nombre %> </p>
-      <p>Venta: <%= anuncio.venta %></p>
-      <p>Precio: <%= anuncio.precio %></p>
-      <p>Tags: <%= anuncio.tags %></p>
+
+  <% anuncios.forEach(anuncio=> { %>
+    <img class="image" src="../images/<%=anuncio.foto%>" width="20%" />
+    <p>Nombre: <%= anuncio.nombre %>
+    </p>
+    <p>Venta: <%= anuncio.venta %>
+    </p>
+    <p>Precio: <%= anuncio.precio %>
+    </p>
+    <p>Tags: <%= anuncio.tags %>
+    </p>
     <% }) %>
 
-  </body>
-</html>
+      <% include pie.ejs %>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</header>
