@@ -35,6 +35,7 @@ var usersRouter = require('./routes/users');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/features', require('./routes/features'));
 
 
 // catch 404 and forward to error handler
