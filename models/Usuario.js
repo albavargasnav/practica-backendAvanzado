@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // crear esquema
 const usuarioSchema = mongoose.Schema({
-    email: String,
+    email: { type: String, unique: true },
     password: String,
 })
 
