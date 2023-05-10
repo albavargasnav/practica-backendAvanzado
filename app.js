@@ -7,6 +7,7 @@ const i18n = require('./lib/i18nConfigure');
 const LoginController = require('./controllers/LoginController');
 const PrivadoController = require('./controllers/PrivadoController');
 const session = require('express-session');
+const sessionAuth = require('./lib/sessionAuthMiddleware');
 
 require('./lib/connectMongoose');
 
@@ -55,7 +56,7 @@ app.use('/features', require('./routes/features'));
 app.use('/change-locale', require('./routes/change-locale'));
 app.get('/login', loginController.index);
 app.post('/login', loginController.post);
-app.get('/privado', privadoController.index);
+app.get('/privado', sessionAuth, privadoController.index);
 
 
 // catch 404 and forward to error handler
