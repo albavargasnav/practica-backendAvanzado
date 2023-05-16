@@ -1,6 +1,25 @@
+const { Usuario } = require('../models');
+
+
 class PrivadoController {
-    index(req, res, next) {
-        res.render('privado');
+    async index(req, res, next) {
+        try {
+
+        const usuarioId = req.session.usuarioLogado;
+
+        const usuario = await Usuario.findById(usuarioId);
+
+        if (!usuario) {
+            next(new Error('usuario no encontrado'));
+            return;
+        }
+
+
+        res.render('privado', { email: usuario.email });
+
+        } catch(err) {
+            next(err);
+        }
     }
 }
 
