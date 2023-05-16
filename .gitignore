@@ -3,6 +3,7 @@
 /node_modules
 /uploads/*
 !/uploads/.gitkeep
+.env
 
 # Logs
 logs
@@ -37,3 +38,4 @@ lerna-debug.log*
 
 # DATA
 /data
+

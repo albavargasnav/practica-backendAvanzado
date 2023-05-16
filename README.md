@@ -5,6 +5,13 @@
 
 ## Documentación
 
+Copiar .env.example to .env and customize your variables.
+
+```sh
+cp .env.example .env
+```
+
+
 Arrancar en development mode:
 
 ```

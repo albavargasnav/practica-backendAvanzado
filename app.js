@@ -31,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 app.use('/api/anuncios', require('./routes/api/anuncios'));
 
+
 app.use(i18n.init);
 app.use(session({
   name: 'nodepop-session',
@@ -41,7 +42,7 @@ app.use(session({
     maxAge: 1000 * 60 * 60 *24 * 2 // expira a los 2 dias de inactividad
   },
   store: MongoStore.create({
-    mongoUrl: 'mongodb://127.0.0.1:27017/cursonode'
+    mongoUrl: process.env.MONGODB_CONNECTION_STR
   })
 }))
 
