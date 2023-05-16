@@ -35,14 +35,24 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                         <li class="nav-item"><a class="nav-link me-lg-3" href="/features"><%= __('Features') %></a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#download"><%= __('Download') %></a></li>
+                        <% if (session.usuarioLogado) { %>
+                            <li class="nav-item"><a class="nav-link me-lg-3" href="/privado"><%= __('Private') %></a></li>
+                        <% } %>
                     </ul>
-                    <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+
+                    <% if (session.usuarioLogado) { %>
+                    <a href="/logout" class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0">
                         <span class="d-flex align-items-center">
-                            <i class="bi-chat-text-fill me-2"></i>
-                            <span class="small"><%= __('Send Feedback') %></span>
+                                <span class="small"><%= __('Logout') %></span>
                         </span>
-                    </button>
+                    </a>
+                    <% } else { %>
+                        <a href="/login" class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0">
+                            <span class="d-flex align-items-center">
+                                    <span class="small"><%= __('Login') %></span>
+                            </span>
+                        </a>
+                    <% } %>
                 </div>
             </div>
         </nav>

@@ -8,5 +8,8 @@
 	"Sign in": "Entrar",
 	"Invalid credentials": "Credenciales invalidas",
 	"Private zone": "Zona privada",
-	"User email is": "Tu email es"
+	"User email is": "Tu email es",
+	"Logout": "Logout",
+	"Private": "Privado",
+	"Login": "Login"
 }

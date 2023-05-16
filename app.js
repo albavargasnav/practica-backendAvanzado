@@ -55,12 +55,18 @@ const privadoController = new PrivadoController();
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+// hacemos que el objeto de sesión esté disponible al renderizar vistas
+app.use((req, res, next) => {
+  res.locals.session = req.session;
+  next();
+})
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/features', require('./routes/features'));
 app.use('/change-locale', require('./routes/change-locale'));
 app.get('/login', loginController.index);
 app.post('/login', loginController.post);
+app.get('/logout', loginController.logout);
 app.get('/privado', sessionAuth, privadoController.index);
 
 
