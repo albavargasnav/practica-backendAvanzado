@@ -8,6 +8,7 @@ const LoginController = require('./controllers/LoginController');
 const PrivadoController = require('./controllers/PrivadoController');
 const session = require('express-session');
 const sessionAuth = require('./lib/sessionAuthMiddleware');
+const MongoStore = require('connect-mongo');
 
 require('./lib/connectMongoose');
 
@@ -38,7 +39,10 @@ app.use(session({
   resave: false,
   cookie: {
     maxAge: 1000 * 60 * 60 *24 * 2 // expira a los 2 dias de inactividad
-  }
+  },
+  store: MongoStore.create({
+    mongoUrl: 'mongodb://127.0.0.1:27017/cursonode'
+  })
 }))
 
 const loginController = new LoginController();
