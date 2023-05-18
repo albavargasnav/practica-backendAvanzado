@@ -9,6 +9,7 @@ const PrivadoController = require('./controllers/PrivadoController');
 const session = require('express-session');
 const sessionAuth = require('./lib/sessionAuthMiddleware');
 const MongoStore = require('connect-mongo');
+const jwtAuthMiddleware = require('./lib/jwtAuthMiddleware');
 
 require('./lib/connectMongoose');
 
@@ -26,10 +27,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const loginController = new LoginController();
+
 /**
  * Rutas del api
  */
-app.use('/api/anuncios', require('./routes/api/anuncios'));
+app.use('/api/anuncios', jwtAuthMiddleware, require('./routes/api/anuncios'));
+app.post('/api/login', loginController.postAPI)
 
 
 app.use(i18n.init);
@@ -46,7 +50,7 @@ app.use(session({
   })
 }))
 
-const loginController = new LoginController();
+
 const privadoController = new PrivadoController();
 
 /**

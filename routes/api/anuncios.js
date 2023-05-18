@@ -7,8 +7,10 @@ const Anuncio = require('../../models/Anuncio');
 router.get('/', async (req, res, next) => {
   try {
 
+    console.log('El _id del usuario que ha hecho la peticion es', req.usuarioLogadoDelAPI);
+
     //Cambiar en el texto de cada idioma desde controlador
-    res.locals.texto = res.__('Text');
+    res.locals.texto = req.__('Text');
 
     //Lista de tags 
     res.locals.tags = [
