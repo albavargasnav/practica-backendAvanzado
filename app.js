@@ -33,7 +33,7 @@ const loginController = new LoginController();
  * Rutas del api
  */
 app.use('/api/anuncios', jwtAuthMiddleware, require('./routes/api/anuncios'));
-app.post('/api/login', loginController.postAPI)
+app.post('/api/authenticate', loginController.postAPI)
 
 
 app.use(i18n.init);
