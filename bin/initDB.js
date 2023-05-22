@@ -32,7 +32,7 @@ async function initAnuncios () {
     // crear anuncios iniciales
     const inserted = await Anuncio.insertMany(init);
 
-    console.log(`Creados ${inserted.lenght} anuncios`);
+    console.log(`Creados ${inserted.length} anuncios`);
 }
 
 async function initUsuarios() {
@@ -45,5 +45,5 @@ async function initUsuarios() {
         { email: 'admin@example.com', password: await Usuario.hashPassword ('1234')},
         { email: 'user@example.com', password: await Usuario.hashPassword ('1234')},
     ]);
-    console.log(`Creados ${inserted.lenght} usuarios.`);
+    console.log(`Creados ${inserted.length} usuarios.`);
 }
