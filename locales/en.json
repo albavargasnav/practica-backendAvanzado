@@ -1,10 +1,6 @@
 {
 	"Welcome to": "Welcome to",
 	"Header": "Header",
-	"Enter a new age of web design": "Enter a new age of web design",
-	"Features": "Features",
-	"Download": "Download",
-	"Send Feedback": "Send Feedback",
 	"Sign in": "Sign in",
 	"Invalid credentials": "Invalid credentials",
 	"Private zone": "Private zone",
@@ -12,5 +8,6 @@
 	"Logout": "Logout",
 	"Private": "Private",
 	"Login": "Login",
-	"Text": "Text"
+	"Text": "Text",
+	"Welcome to ": "Welcome to "
 }
