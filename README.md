@@ -1,16 +1,25 @@
-# Práctica del Módulo Backend Node
+# Práctica del Módulo Backend Avanzado
 
 ######  Documentación de instalación y uso
 
 
-## Documentación
+Instalar dependencias:
 
-Copiar .env.example to .env and customize your variables.
+```sh
+npm install
+```
+
+Copiar .env.example to .env y personalizar tus variables:
 
 ```sh
 cp .env.example .env
 ```
 
+Iniciar la base de datos:
+
+```sh
+npm run initDB
+```
 
 Arrancar en development mode:
 
@@ -24,22 +33,21 @@ Arrancar en cluster mode:
 npm run cluster
 ```
 
+######  Información General
+
+
+Direccion para ver la pagina Frontend y las peticiones con el puerto 3000
+
+```
+http://localhost:3000/
+```
 
 Localizarnos en la carpeta 
 
 ```
-cd nodepop_backendnode
+cd practica-backendAvanzado-main
 ```
-Ejecutar express
 
-```
-npx express-generator nodepop --ejs
-```
-Instalar las dependencias
-
-```
-npm install
-```
 Instalar Moongoose
 
 ```
@@ -49,12 +57,13 @@ npm i mongoose
 Instalar Nodemon
 
 ```
-npm i mongoose
+npm i nodemon
 ```
-Direccion para ver la pagina Frontend y las peticiones con el puerto 3000
+
+Ejecutar express
 
 ```
-http://127.0.0.1:3000/
+npx express-generator nodepop --ejs
 ```
 
 
