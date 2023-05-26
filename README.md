@@ -1,5 +1,13 @@
 # Práctica del Módulo Backend Avanzado
 
+Puntos realizados:
+```sh
+- Autenticación
+- Internacionalización
+```
+
+
+
 ######  Documentación de instalación y uso
 
 
